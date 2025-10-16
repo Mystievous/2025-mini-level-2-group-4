@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{15be32d4-c696-427d-b718-4609d01f91ba}">
+		<property name="assetPath">
+			<value>Vine_Boom.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.0720000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{32cdaa06-6940-4ff2-b5f0-3a8fbf2053a4}</destination>
+		</relationship>
+	</object>
+</objects>
