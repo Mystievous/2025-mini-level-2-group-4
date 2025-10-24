@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://waym677j4n1k"]
+
+[ext_resource type="Script" uid="uid://bsis67hnff10t" path="res://levels/Lose/lose_screen.gd" id="1_ckc3b"]
+[ext_resource type="PackedScene" uid="uid://8ij28dxj1u44" path="res://levels/level1/level1.tscn" id="2_n2e6l"]
+[ext_resource type="Texture2D" uid="uid://bgf320el2737t" path="res://assets/MenuAssets/Buttons.png" id="2_tacbi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckc3b"]
+atlas = ExtResource("2_tacbi")
+region = Rect2(70, 4, 19, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tacbi"]
+atlas = ExtResource("2_tacbi")
+region = Rect2(70, 4, 19, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjgr0"]
+atlas = ExtResource("2_tacbi")
+region = Rect2(5, 19, 21, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2e6l"]
+atlas = ExtResource("2_tacbi")
+region = Rect2(33, 20, 30, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ceas"]
+atlas = ExtResource("2_tacbi")
+region = Rect2(33, 20, 30, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpk66"]
+atlas = ExtResource("2_tacbi")
+region = Rect2(64, 19, 32, 9)
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ckc3b")
+level_scene = ExtResource("2_n2e6l")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 336.0
+offset_right = 1088.0
+offset_bottom = 424.0
+texture_normal = SubResource("AtlasTexture_ckc3b")
+texture_pressed = SubResource("AtlasTexture_tacbi")
+texture_hover = SubResource("AtlasTexture_kjgr0")
+stretch_mode = 0
+
+[node name="ReplayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 200.0
+offset_right = 1168.0
+offset_bottom = 296.0
+texture_normal = SubResource("AtlasTexture_n2e6l")
+texture_pressed = SubResource("AtlasTexture_0ceas")
+texture_hover = SubResource("AtlasTexture_jpk66")
+stretch_mode = 0
+
+[connection signal="pressed" from="QuitButton" to="." method="end_game"]
+[connection signal="pressed" from="ReplayButton" to="." method="restart_game"]
