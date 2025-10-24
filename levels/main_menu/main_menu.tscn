@@ -1,5 +1,60 @@
-[gd_scene format=3 uid="uid://64nqlmfj4dho"]
+[gd_scene load_steps=10 format=3 uid="uid://64nqlmfj4dho"]
+
+[ext_resource type="Texture2D" uid="uid://bgf320el2737t" path="res://assets/MenuAssets/Buttons.png" id="1_nt5r4"]
+[ext_resource type="Script" uid="uid://dasmruqyplve4" path="res://levels/main_menu/main_menu.gd" id="1_u4e7g"]
+[ext_resource type="PackedScene" uid="uid://8ij28dxj1u44" path="res://levels/level1/level1.tscn" id="2_qbtdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt5r4"]
+atlas = ExtResource("1_nt5r4")
+region = Rect2(6, 4, 20, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4e7g"]
+atlas = ExtResource("1_nt5r4")
+region = Rect2(6, 4, 20, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbtdg"]
+atlas = ExtResource("1_nt5r4")
+region = Rect2(37, 3, 22, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86fa0"]
+atlas = ExtResource("1_nt5r4")
+region = Rect2(70, 4, 19, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h370v"]
+atlas = ExtResource("1_nt5r4")
+region = Rect2(70, 4, 19, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhxwq"]
+atlas = ExtResource("1_nt5r4")
+region = Rect2(5, 19, 21, 9)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_u4e7g")
+level_scene = ExtResource("2_qbtdg")
+
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 432.0
+offset_right = 1160.0
+offset_bottom = 560.0
+texture_normal = SubResource("AtlasTexture_nt5r4")
+texture_pressed = SubResource("AtlasTexture_u4e7g")
+texture_hover = SubResource("AtlasTexture_qbtdg")
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 608.0
+offset_right = 1136.0
+offset_bottom = 720.0
+texture_normal = SubResource("AtlasTexture_86fa0")
+texture_pressed = SubResource("AtlasTexture_h370v")
+texture_hover = SubResource("AtlasTexture_qhxwq")
+stretch_mode = 0
+
+[connection signal="pressed" from="StartButton" to="." method="start_game"]
+[connection signal="pressed" from="QuitButton" to="." method="end_game"]
