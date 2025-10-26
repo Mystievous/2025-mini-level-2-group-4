@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=3 format=3 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
+[ext_resource type="Texture2D" uid="uid://bbkqv3nh3qagm" path="res://assets/FlashlightAssets/radial_light.png" id="2_c6lro"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(960, 540)
+
+[node name="NightStuff" type="CanvasModulate" parent="."]
+color = Color(0.27752772, 0.27752772, 0.27752772, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="NightStuff"]
+energy = 0.4
+
+[node name="TempLights" type="Node2D" parent="."]
+
+[node name="CampfireLight" type="PointLight2D" parent="TempLights"]
+position = Vector2(632, 471)
+scale = Vector2(8.234375, 7.84375)
+color = Color(0.81683517, 0.36831555, 0, 1)
+texture = ExtResource("2_c6lro")
+texture_scale = 0.1

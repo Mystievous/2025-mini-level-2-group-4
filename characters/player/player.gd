@@ -24,6 +24,8 @@ func _physics_process(_delta: float) -> void:
 	if slowed:
 		velocity *= carry_move_percentage
 	
+#	make the player look at the mouse
+	look_at(get_global_mouse_position())
 	move_and_slide()
 
 func kill():
