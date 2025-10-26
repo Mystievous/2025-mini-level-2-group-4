@@ -15,6 +15,7 @@ General/banks_path="res://assets/fmod/2025-MiniLevel2-Group4/Build/Desktop"
 [application]
 
 config/name="2025-MiniLevel2-Group4"
+run/main_scene="uid://c6buoel5ivkew"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -28,7 +29,8 @@ FmodManager="*res://addons/fmod/FmodManager.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -80,4 +82,5 @@ move_right={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
