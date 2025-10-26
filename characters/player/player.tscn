@@ -27,3 +27,8 @@ drag_bottom_margin = 0.1
 
 [node name="Flashlight" type="PointLight2D" parent="."]
 texture = ExtResource("3_exd8k")
+
+[node name="FlashlightCollider" type="Area2D" parent="Flashlight"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flashlight/FlashlightCollider"]
+polygon = PackedVector2Array(-1, -1, 203, -160, 203, 146)
