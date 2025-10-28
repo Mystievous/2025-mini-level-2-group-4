@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b12gtib5ep1fp"
-path="res://.godot/imported/Lose.png-74b9412ff395739ae94519fc9ed34b7d.ctex"
+uid="uid://damly7ptvi8lg"
+path="res://.godot/imported/glow.png-5a3e19dabbdfe01fa7baca9961db16f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MenuAssets/Lose.png"
-dest_files=["res://.godot/imported/Lose.png-74b9412ff395739ae94519fc9ed34b7d.ctex"]
+source_file="res://assets/LevelAssets/glow.png"
+dest_files=["res://.godot/imported/glow.png-5a3e19dabbdfe01fa7baca9961db16f3.ctex"]
 
 [params]
 
