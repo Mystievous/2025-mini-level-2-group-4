@@ -12,8 +12,10 @@ extends Control
 @onready var ground = $grassGroundTilemap
 @onready var lamps = $lamps
 @onready var glow = $glow
+@onready var sky1 = $Sky1
+@onready var sky2 = $Sky2
 
-var fg1_start_x 
+var fg1_start_x
 var fg2_start_x
 var bg1_start_x
 var bg2_start_x
@@ -41,6 +43,8 @@ func move_tiles():
 	ground.position.x -= 1.0
 	lamps.position.x -= 1.0
 	glow.position.x -= 1
+	sky1.position.x -= 0.05
+	sky2.position.x -=0.05
 	
 	# reset positions when they've moved past their scaled tile width
 	if fg1.position.x <= fg1_start_x - (64 * 2.7):
@@ -66,6 +70,12 @@ func move_tiles():
 	
 	if glow.position.x <= glow_start_x - (64 * 5.0 * 2):
 		glow.position.x = glow_start_x
+	
+	if sky1.position.x <= -1920:
+		sky1.position.x += 1920 * 2
+	
+	if sky2.position.x <= -1920:
+		sky2.position.x += 1920 * 2
 
 func _process(_delta: float) -> void:
 	move_tiles()
