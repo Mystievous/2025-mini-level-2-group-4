@@ -7,6 +7,8 @@ class_name Player
 signal killed
 signal slow_changed(new_val: bool)
 
+var bag_inventory : Inventory = Inventory.new()
+
 # This is a "property", which is the same as a normal 
 # variable, but it has `get` and `set` methods
 @export var slowed: bool = false:
@@ -17,6 +19,18 @@ signal slow_changed(new_val: bool)
 		slow_changed.emit(new_val)
 
 func _physics_process(_delta: float) -> void:
+	
+	####TEST START DONT FORGET TO REMOVE
+	if Input.is_action_just_pressed("interact"):
+		print(bag_inventory)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		bag_inventory.add_item(ItemStack.new(ItemLists.ITEM1))
+		
+	if Input.is_action_just_pressed("ui_cancel"):
+		bag_inventory.remove_item()
+	####TEST END DONT FORGET TO REMOVE
+	
 	var move_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	velocity = move_vector * base_speed

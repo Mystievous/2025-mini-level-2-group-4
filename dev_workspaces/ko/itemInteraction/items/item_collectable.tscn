@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://baq0m33h1q7ii"]
+
+[ext_resource type="Script" uid="uid://dblqdffq2cr2y" path="res://dev_workspaces/ko/itemInteraction/items/item_collectable.gd" id="1_mnpvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iwfp"]
+size = Vector2(80, 80)
+
+[node name="ItemCollectable" type="Node2D"]
+script = ExtResource("1_mnpvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_8iwfp")
+debug_color = Color(0.8486575, 0.37522593, 0, 0.41960785)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
