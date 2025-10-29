@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqt8v4vgksjok"]
+
+[ext_resource type="Texture2D" uid="uid://bbirecdhyf2xe" path="res://assets/environment/lamp.png" id="1_w63qx"]
+[ext_resource type="Texture2D" uid="uid://bbkqv3nh3qagm" path="res://assets/FlashlightAssets/radial_light.png" id="2_60eta"]
+
+[node name="Lamp" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -29)
+texture = ExtResource("1_w63qx")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-9, -32)
+energy = 0.46
+texture = ExtResource("2_60eta")
+texture_scale = 1.42
