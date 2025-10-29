@@ -5,19 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://3ntkwip3j2o6" path="res://assets/FlashlightAssets/flashlight.png" id="3_exd8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_508ok"]
-size = Vector2(128, 128)
+size = Vector2(58, 58)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_xxgcw")
+base_speed = 350.0
 
 [node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.45732486, 0.45732486)
 texture = ExtResource("1_508ok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_508ok")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
@@ -26,9 +29,11 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
 [node name="Flashlight" type="PointLight2D" parent="."]
+position = Vector2(-3, 7)
 texture = ExtResource("3_exd8k")
 
 [node name="FlashlightCollider" type="Area2D" parent="Flashlight"]
+position = Vector2(3, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flashlight/FlashlightCollider"]
-polygon = PackedVector2Array(-1, -1, 203, -160, 203, 146)
+polygon = PackedVector2Array(0, 0, 203, -160, 203, 146)
