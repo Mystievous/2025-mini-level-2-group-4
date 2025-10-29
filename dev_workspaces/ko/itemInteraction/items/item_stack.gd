@@ -18,3 +18,6 @@ func is_empty()-> bool:
 
 func _to_string() -> String:
 	return "Item: " + str(item)
+
+func getTexture() -> Texture2D:
+	return item.texture
