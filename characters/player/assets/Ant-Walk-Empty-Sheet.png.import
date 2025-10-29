@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6bm01qb4aqf"
-path="res://.godot/imported/placeholder player sprite.png-fcc623180151cfbac36dfb1e563abeeb.ctex"
+uid="uid://cdugj1cnn7415"
+path="res://.godot/imported/Ant-Walk-Empty-Sheet.png-c606442fbd059df32c36f53b522a4469.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/assets/placeholder player sprite.png"
-dest_files=["res://.godot/imported/placeholder player sprite.png-fcc623180151cfbac36dfb1e563abeeb.ctex"]
+source_file="res://characters/player/assets/Ant-Walk-Empty-Sheet.png"
+dest_files=["res://.godot/imported/Ant-Walk-Empty-Sheet.png-c606442fbd059df32c36f53b522a4469.ctex"]
 
 [params]
 

@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bwgt68py41tj4" path="res://assets/LevelAssets/blade-wall-Sheet.png" id="4_h370v"]
 [ext_resource type="Texture2D" uid="uid://bu5smd8cc4uyl" path="res://characters/snail/assets/Snail_Normal.png" id="5_qhxwq"]
 [ext_resource type="Texture2D" uid="uid://cuysj212k7pes" path="res://assets/LevelAssets/lamp.png" id="5_vxpir"]
-[ext_resource type="Texture2D" uid="uid://bs6bm01qb4aqf" path="res://characters/player/assets/placeholder player sprite.png" id="7_2nemu"]
 [ext_resource type="Texture2D" uid="uid://damly7ptvi8lg" path="res://assets/LevelAssets/glow.png" id="7_dedsy"]
-[ext_resource type="AudioStream" uid="uid://c2r72iegcfaa2" path="res://assets/Music and Sounds/MainMenu_v0.1.wav" id="10_yj85j"]
+[ext_resource type="Texture2D" uid="uid://e84vgfiasgd" path="res://characters/player/assets/Ant-Walk-Full-Sheet.png" id="9_ii3ol"]
 [ext_resource type="FontFile" uid="uid://cxc44lu1aye2g" path="res://assets/LevelAssets/HandymandiFree.ttf" id="11_si2pl"]
+[ext_resource type="AudioStream" uid="uid://hb36hvlhpbfc" path="res://assets/Music and Sounds/MainMenu_v0.2.wav" id="12_ii3ol"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxpir"]
 texture = ExtResource("4_h370v")
@@ -681,40 +681,40 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_si2pl"]
-atlas = ExtResource("7_2nemu")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ii3ol"]
-atlas = ExtResource("7_2nemu")
-region = Rect2(32, 32, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_up1ki"]
-atlas = ExtResource("7_2nemu")
-region = Rect2(64, 32, 32, 32)
+atlas = ExtResource("9_ii3ol")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tiuy7"]
-atlas = ExtResource("7_2nemu")
-region = Rect2(96, 32, 32, 32)
+atlas = ExtResource("9_ii3ol")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07nfu"]
+atlas = ExtResource("9_ii3ol")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_perv6"]
+atlas = ExtResource("9_ii3ol")
+region = Rect2(192, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_07nfu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_si2pl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ii3ol")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_up1ki")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tiuy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07nfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_perv6")
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 4.0
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhxwq"]
@@ -1082,11 +1082,11 @@ autoplay = "default"
 
 [node name="player" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.6290828, 0.6290828, 0.6290828, 1)
-position = Vector2(1264, 784)
-scale = Vector2(8, 8)
+position = Vector2(1265, 768)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_07nfu")
 autoplay = "default"
-frame_progress = 0.16651003
+frame_progress = 0.72800404
 
 [node name="tallGrassTilemapFG2" type="TileMapLayer" parent="."]
 modulate = Color(0.62908286, 0.62908286, 0.62908286, 1)
@@ -1137,7 +1137,7 @@ texture_hover = SubResource("AtlasTexture_qhxwq")
 stretch_mode = 0
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_yj85j")
+stream = ExtResource("12_ii3ol")
 autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="start_game"]
