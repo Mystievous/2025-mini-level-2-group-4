@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://qcaqk6njeuva"]
 
-[ext_resource type="Texture2D" uid="uid://bgf320el2737t" path="res://assets/MenuAssets/Buttons.png" id="1_3mhlr"]
+[ext_resource type="Texture2D" uid="uid://bgf320el2737t" path="res://assets/LevelAssets/Buttons.png" id="1_3mhlr"]
 [ext_resource type="Script" uid="uid://bh2hbb4ulhym8" path="res://levels/Win/win_screen.gd" id="1_p4gc6"]
 [ext_resource type="PackedScene" uid="uid://8ij28dxj1u44" path="res://levels/level1/level1.tscn" id="2_3ki6p"]
 

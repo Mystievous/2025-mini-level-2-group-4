@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgf320el2737t"
-path="res://.godot/imported/Buttons.png-b968bd9db93610d9af9328a03178ac37.ctex"
+uid="uid://batemaxuq7mux"
+path="res://.godot/imported/grass-composite-Sheet.png-5d709e488e1338252d3715f43bce9a5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MenuAssets/Buttons.png"
-dest_files=["res://.godot/imported/Buttons.png-b968bd9db93610d9af9328a03178ac37.ctex"]
+source_file="res://assets/LevelAssets/grass-composite-Sheet.png"
+dest_files=["res://.godot/imported/grass-composite-Sheet.png-5d709e488e1338252d3715f43bce9a5f.ctex"]
 
 [params]
 
