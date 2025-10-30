@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{beee8618-5a6c-4325-b687-4cf9d06504c4}">
+		<property name="assetPath">
+			<value>98168-Heartbeat_thump_01-SFXBible-ss01947.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>11.666281179138322</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{32cdaa06-6940-4ff2-b5f0-3a8fbf2053a4}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qcaqk6njeuva"]
+[gd_scene load_steps=11 format=3 uid="uid://qcaqk6njeuva"]
 
 [ext_resource type="Texture2D" uid="uid://bgf320el2737t" path="res://assets/LevelAssets/Buttons.png" id="1_3mhlr"]
 [ext_resource type="Script" uid="uid://bh2hbb4ulhym8" path="res://levels/Win/win_screen.gd" id="1_p4gc6"]
 [ext_resource type="PackedScene" uid="uid://8ij28dxj1u44" path="res://levels/level1/level1.tscn" id="2_3ki6p"]
+[ext_resource type="AudioStream" uid="uid://dvgo260lqh0v5" path="res://assets/Music and Sounds/273825-App_Menu_Button_6.wav" id="4_e8i3l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4gc6"]
 atlas = ExtResource("1_3mhlr")
@@ -59,6 +60,10 @@ texture_normal = SubResource("AtlasTexture_ay7uw")
 texture_pressed = SubResource("AtlasTexture_5h88a")
 texture_hover = SubResource("AtlasTexture_nb86n")
 stretch_mode = 0
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_e8i3l")
 
 [connection signal="pressed" from="Replay" to="." method="restart_game"]
 [connection signal="pressed" from="Quit" to="." method="end_game"]

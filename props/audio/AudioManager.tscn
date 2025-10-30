@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ctlxt7g6se11f"]
+
+[node name="AudioManager" type="Node2D"]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://assets/fmod/2025-MiniLevel2-Group4/Build/Desktop/Master.strings.bank", "res://assets/fmod/2025-MiniLevel2-Group4/Build/Desktop/Master.bank"]
+
+[node name="Music" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/LevelMusic"
+event_guid = "{6ebd3cde-833a-44b1-a6b0-2ae91c118c9c}"
+autoplay = true
+
+[node name="Heartbeat" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Heartbeat"
+event_guid = "{154c5d61-175e-4064-972a-fa1e93244761}"
+autoplay = true

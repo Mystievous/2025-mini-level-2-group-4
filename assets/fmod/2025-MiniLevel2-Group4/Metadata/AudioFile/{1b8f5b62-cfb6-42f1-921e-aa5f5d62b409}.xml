@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{1b8f5b62-cfb6-42f1-921e-aa5f5d62b409}">
+		<property name="assetPath">
+			<value>388856-Heartbeat-Regular-Single-01-01b-LOOP.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0230416666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{32cdaa06-6940-4ff2-b5f0-3a8fbf2053a4}</destination>
+		</relationship>
+	</object>
+</objects>

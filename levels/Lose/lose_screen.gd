@@ -1,5 +1,7 @@
 extends Control
 
+@onready var button_sound: AudioStreamPlayer = %ButtonSound
+
 @export var level_scene: PackedScene
 
 @onready var JScare = $Jumpscare
@@ -37,9 +39,17 @@ func _ready() -> void:
 	
 
 func restart_game() -> void:
+	if button_sound.playing:
+		return
+	button_sound.play()
+	await button_sound.finished
 	get_tree().change_scene_to_packed(level_scene)
 
 func end_game() -> void:
+	if button_sound.playing:
+		return
+	button_sound.play()
+	await button_sound.finished
 	get_tree().quit()
 
 func fade_in(duration: float = 1.0):

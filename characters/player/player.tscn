@@ -48,3 +48,8 @@ texture = ExtResource("3_exd8k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlashlightCollider"]
 polygon = PackedVector2Array(0, 0, 200, -200, 200, 200)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="FmodListener2D" type="FmodListener2D" parent="."]

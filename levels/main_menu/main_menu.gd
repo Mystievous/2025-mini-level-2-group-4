@@ -1,5 +1,7 @@
 extends Control
 
+@onready var button_sound: AudioStreamPlayer = %ButtonSound
+
 @export var level_scene: PackedScene
 
 @onready var fg1 = $tallGrassTilemapFG1
@@ -81,7 +83,17 @@ func _process(_delta: float) -> void:
 	move_tiles()
 
 func start_game() -> void:
+	if button_sound.playing:
+		return
+		
+	button_sound.play()
+	await button_sound.finished
 	get_tree().change_scene_to_packed(level_scene)
 	
 func end_game() -> void:
+	if button_sound.playing:
+		return
+	
+	button_sound.play()
+	await button_sound.finished
 	get_tree().quit()
