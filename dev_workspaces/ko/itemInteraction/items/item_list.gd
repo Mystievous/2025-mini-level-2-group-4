@@ -1,4 +1,4 @@
-class_name ItemLists
+class_name ItemsList
 extends Node
 
 const EMPTY : ItemBase = preload("res://dev_workspaces/ko/itemInteraction/resources/item0.tres")

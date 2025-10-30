@@ -1,6 +1,6 @@
-class_name ItemStack
+class_name ItemManager
 
-signal item_changed(item: ItemBase)
+#signal item_changed(item: ItemBase)
 
 #constructor ?
 #this is called in inventory.gd's _init()
@@ -11,10 +11,10 @@ func _init(item: ItemBase):
 var item: ItemBase:
 	set(val):
 		item = val
-		item_changed.emit(val)
+#		item_changed.emit(val)
 
 func is_empty()-> bool:
-	return item == ItemLists.EMPTY
+	return item == ItemsList.EMPTY
 
 func _to_string() -> String:
 	return "Item: " + str(item)

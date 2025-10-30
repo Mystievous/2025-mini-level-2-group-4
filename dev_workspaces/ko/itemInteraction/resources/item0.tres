@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemProperties" load_steps=3 format=3 uid="uid://cxvj5aofoln5d"]
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://cxvj5aofoln5d"]
 
 [ext_resource type="Script" uid="uid://dkpod6wmm442r" path="res://dev_workspaces/ko/itemInteraction/classes/item_base.gd" id="1_pp5fn"]
 [ext_resource type="Texture2D" uid="uid://w4a7b5ohgmtw" path="res://dev_workspaces/ko/itemInteraction/item_sprite_placeholder/object0.png" id="2_07ywg"]
