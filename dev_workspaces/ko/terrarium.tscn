@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdfhccsnndw3n"]
+
+[ext_resource type="Script" uid="uid://6juwn73phkll" path="res://dev_workspaces/ko/terrarium.gd" id="1_l8iq2"]
+[ext_resource type="Texture2D" uid="uid://doxbpt1vrk18d" path="res://props/terrarium/Aligned/Terrarium.Back.png" id="1_lxd43"]
+[ext_resource type="Texture2D" uid="uid://ciepl3jnb1rva" path="res://props/terrarium/Aligned/Terrarium.Blank_Aligned.png" id="2_vpjbo"]
+[ext_resource type="Texture2D" uid="uid://bn71yolw1g0ad" path="res://props/terrarium/Aligned/Terrarium.BottleCap_Aligned.png" id="2_xas8q"]
+[ext_resource type="Texture2D" uid="uid://clctlf16ebned" path="res://props/terrarium/Aligned/Terrarium.Front.png" id="3_t70d8"]
+[ext_resource type="Texture2D" uid="uid://bhg4y0gr2vi6e" path="res://props/terrarium/Aligned/Terrarium.Leaves_Aligned.png" id="4_l8iq2"]
+[ext_resource type="Texture2D" uid="uid://c077mnrwgwq7o" path="res://props/terrarium/Aligned/Terrarium.Doll_Aligned.png" id="5_ou2wf"]
+[ext_resource type="Texture2D" uid="uid://mn8vv3w4osum" path="res://props/terrarium/Aligned/Terrarium.HamsterWheel_Aligned.png" id="6_7k6ky"]
+[ext_resource type="Texture2D" uid="uid://do3dkur06gd0e" path="res://props/terrarium/Aligned/Terrarium.Skull_Aligned.png" id="7_2k4t1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpjbo"]
+size = Vector2(576, 320)
+
+[node name="Terrarium" type="Node2D"]
+script = ExtResource("1_l8iq2")
+
+[node name="back" type="Sprite2D" parent="."]
+texture = ExtResource("1_lxd43")
+
+[node name="blankItems" type="Sprite2D" parent="."]
+texture = ExtResource("2_vpjbo")
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="cap" type="Sprite2D" parent="items"]
+visible = false
+texture = ExtResource("2_xas8q")
+
+[node name="leaf" type="Sprite2D" parent="items"]
+visible = false
+texture = ExtResource("4_l8iq2")
+
+[node name="doll" type="Sprite2D" parent="items"]
+visible = false
+texture = ExtResource("5_ou2wf")
+
+[node name="wheel" type="Sprite2D" parent="items"]
+visible = false
+texture = ExtResource("6_7k6ky")
+
+[node name="skull" type="Sprite2D" parent="items"]
+visible = false
+texture = ExtResource("7_2k4t1")
+
+[node name="front" type="Sprite2D" parent="."]
+texture = ExtResource("3_t70d8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-32, 32)
+shape = SubResource("RectangleShape2D_vpjbo")
+debug_color = Color(0.50881004, 0.42451367, 1, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

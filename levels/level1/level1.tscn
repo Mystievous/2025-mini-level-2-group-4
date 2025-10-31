@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=13 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://xegupd3u4su0" path="res://dev_workspaces/ko/items/item_Hamster_Wheel.tscn" id="8_ddtso"]
 [ext_resource type="PackedScene" uid="uid://bme6vbedusuud" path="res://dev_workspaces/ko/items/item_Leaves.tscn" id="9_f7y8c"]
 [ext_resource type="PackedScene" uid="uid://cdsqb881f2yj1" path="res://dev_workspaces/ko/items/item_Skull.tscn" id="10_xc23s"]
+[ext_resource type="PackedScene" uid="uid://cdfhccsnndw3n" path="res://dev_workspaces/ko/terrarium.tscn" id="11_ddtso"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
 
@@ -45,7 +46,7 @@ position = Vector2(960, 540)
 position = Vector2(800, 544)
 
 [node name="Cap" parent="." instance=ExtResource("7_jhqhn")]
-position = Vector2(640, 464)
+position = Vector2(640, 600)
 
 [node name="HamsterWheel" parent="." instance=ExtResource("8_ddtso")]
 position = Vector2(824, 728)
@@ -55,3 +56,6 @@ position = Vector2(984, 368)
 
 [node name="Skull" parent="." instance=ExtResource("10_xc23s")]
 position = Vector2(792, 280)
+
+[node name="Terrarium" parent="." instance=ExtResource("11_ddtso")]
+position = Vector2(384, 272)
