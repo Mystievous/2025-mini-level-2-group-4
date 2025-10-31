@@ -23,7 +23,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if slowed:
 		velocity *= carry_move_percentage
-	
+		
 	move_and_slide()
 
 func kill():

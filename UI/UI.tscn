@@ -1,0 +1,139 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm2ftuqouu3yq"]
+
+[ext_resource type="Script" uid="uid://d60el47c7rkw" path="res://UI/ItemTracking.gd" id="1_6dd3c"]
+[ext_resource type="Texture2D" uid="uid://dmao57dmo1x3h" path="res://UI/UIButton/pixil-frame-0 (3).png" id="2_q0uhn"]
+[ext_resource type="Script" uid="uid://uh3vmeudw6xj" path="res://UI/QuestionButton.gd" id="3_q0uhn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg4cr"]
+bg_color = Color(0.13636124, 0.13802296, 0.16581333, 1)
+draw_center = false
+
+[sub_resource type="SystemFont" id="SystemFont_wf015"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2lfg"]
+bg_color = Color(0.7264468, 0.58251035, 0.14633584, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1fl4"]
+atlas = ExtResource("2_q0uhn")
+region = Rect2(22, 2, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqf55"]
+atlas = ExtResource("2_q0uhn")
+region = Rect2(22, 34, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byuxr"]
+atlas = ExtResource("2_q0uhn")
+region = Rect2(22, 65, 35, 34)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37rai"]
+bg_color = Color(0.9999977, 0.53008384, 0.27373222, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.097208254, 0.014946973, 3.008172e-09, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="TaskReminderUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 640.0
+offset_right = 640.0
+grow_horizontal = 2
+pivot_offset = Vector2(189, 261)
+script = ExtResource("1_6dd3c")
+
+[node name="PanelContainer" type="PanelContainer" parent="TaskReminderUI"]
+layout_mode = 0
+offset_right = 317.0
+offset_bottom = 100.0
+pivot_offset = Vector2(248, 159)
+theme_override_styles/panel = SubResource("StyleBoxFlat_tg4cr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TaskReminderUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TaskLabel" type="Label" parent="TaskReminderUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_wf015")
+theme_override_font_sizes/font_size = 22
+text = "Items Collected For Terrarium"
+vertical_alignment = 1
+
+[node name="CountLabel" type="Label" parent="TaskReminderUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "0 / 7"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="TaskReminderUI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "
+"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_v2lfg")
+
+[node name="Instructions UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="Instructions UI"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -112.0
+offset_right = 77.333374
+offset_bottom = -79.67272
+scale = Vector2(3, 3.12)
+pivot_offset = Vector2(8, -61.857975)
+texture_normal = SubResource("AtlasTexture_f1fl4")
+texture_pressed = SubResource("AtlasTexture_jqf55")
+texture_hover = SubResource("AtlasTexture_byuxr")
+ignore_texture_size = true
+script = ExtResource("3_q0uhn")
+
+[node name="InstructionUIContainer" type="PanelContainer" parent="Instructions UI"]
+visible = false
+layout_mode = 0
+offset_left = -13.0000305
+offset_top = -17.0
+offset_right = 345.99997
+offset_bottom = 127.0
+scale = Vector2(1.3842254, 1.3625042)
+pivot_offset = Vector2(-34.49562, -43.97215)
+theme_override_styles/panel = SubResource("StyleBoxFlat_37rai")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Instructions UI/InstructionUIContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TaskReminder1" type="Label" parent="Instructions UI/InstructionUIContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_wf015")
+theme_override_font_sizes/font_size = 22
+text = "MAIN OBJECTIVES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskReminder2" type="Label" parent="Instructions UI/InstructionUIContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_wf015")
+theme_override_font_sizes/font_size = 22
+text = "1. Collect Items
+2. Build The Terrarium
+3. DO NOT GET CAUGHT BY SNAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
