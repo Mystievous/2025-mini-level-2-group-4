@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://waym677j4n1k"]
+[gd_scene load_steps=42 format=4 uid="uid://waym677j4n1k"]
 
 [ext_resource type="Script" uid="uid://bsis67hnff10t" path="res://levels/Lose/lose_screen.gd" id="1_ckc3b"]
 [ext_resource type="PackedScene" uid="uid://8ij28dxj1u44" path="res://levels/level1/level1.tscn" id="2_n2e6l"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bwgt68py41tj4" path="res://assets/LevelAssets/blade-wall-Sheet.png" id="5_kjgr0"]
 [ext_resource type="Texture2D" uid="uid://cuysj212k7pes" path="res://assets/LevelAssets/lamp.png" id="6_diqc8"]
 [ext_resource type="Texture2D" uid="uid://damly7ptvi8lg" path="res://assets/LevelAssets/glow.png" id="7_1jnjm"]
+[ext_resource type="AudioStream" uid="uid://8xakva0sn57m" path="res://assets/Music and Sounds/screamer-jumpscare-66896.mp3" id="10_3udv6"]
+[ext_resource type="AudioStream" uid="uid://hb36hvlhpbfc" path="res://assets/Music and Sounds/MainMenu_v0.2.wav" id="11_nyho7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7snp"]
 texture = ExtResource("5_kjgr0")
@@ -848,6 +850,14 @@ texture_normal = SubResource("AtlasTexture_n2e6l")
 texture_pressed = SubResource("AtlasTexture_0ceas")
 texture_hover = SubResource("AtlasTexture_jpk66")
 stretch_mode = 0
+
+[node name="JumpscareSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_3udv6")
+volume_db = -5.0
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_nyho7")
+volume_db = 5.0
 
 [connection signal="pressed" from="QuitButton" to="." method="end_game"]
 [connection signal="pressed" from="ReplayButton" to="." method="restart_game"]

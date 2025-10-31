@@ -15,6 +15,8 @@ extends Control
 @onready var sky1 = $Sky1
 @onready var sky2 = $Sky2
 
+@onready var jumpscare = $JumpscareSound
+
 var fg1_start_x
 var fg2_start_x
 var bg1_start_x
@@ -85,3 +87,12 @@ func start_game() -> void:
 	
 func end_game() -> void:
 	get_tree().quit()
+	
+func play_jumpscare_sound(sound_path: String, duration: float):
+	var audio_player = AudioStreamPlayer.new()
+	audio_player.add_child(jumpscare)
+	audio_player.stream = load(sound_path)
+	audio_player.play()
+	await get_tree().create_timer(duration).timeout
+	audio_player.stop()
+	audio_player.queue_free()

@@ -17,6 +17,9 @@ extends Control
 @onready var grass4 = $TallGrassTilemap4
 @onready var snail = $Snail
 
+@onready var jumpscareSound = $JumpscareSound
+@onready var BGMusic = $BGMusic
+
 var game_over_active = false
 var grass1start
 var grass4start
@@ -63,7 +66,8 @@ func jumpscare():
 	glow1.visible = true
 	glow2.visible = true
 	JScare.play("jumpscare")
-
+	play_jumpscare_sound(5.4, 2.4)
+	
 	await JScare.animation_finished
 
 	await fade_in(1.0)
@@ -75,7 +79,7 @@ func jumpscare():
 	glow1.visible = false
 	glow2.visible = false
 
-	
+	BGMusic.play()
 	grass1.visible = true
 	grass4.visible = true
 	qButton.visible = true
@@ -98,3 +102,9 @@ func move_grass():
 func _process(delta: float) -> void:
 	if game_over_active:
 		move_grass()
+
+func play_jumpscare_sound(duration: float, delay: float):
+	await get_tree().create_timer(delay).timeout
+	jumpscareSound.play()
+	await get_tree().create_timer(duration).timeout
+	jumpscareSound.stop();
