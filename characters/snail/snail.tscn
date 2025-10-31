@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Texture2D" path="res://characters/snail/assets/Snail_Normal.png" id="1"]
 [ext_resource type="Script" path="res://characters/snail/snail.gd" id="2"]
@@ -8,6 +8,10 @@ radius = 8.0
 
 [sub_resource type="CircleShape2D" id="2"]
 radius = 14.0
+
+# NEW: slightly larger circle for the kill zone (feel free to tweak)
+[sub_resource type="CircleShape2D" id="3"]
+radius = 12.0
 
 [node name="Snail" type="CharacterBody2D"]
 collision_layer = 4
@@ -27,8 +31,20 @@ position = Vector2(0, 0)
 monitoring = true
 monitorable = true
 collision_layer = 0
-collision_mask = 128
+collision_mask = 128   # layer 8 (flashlight)
 
 [node name="LightDetectorShape" type="CollisionShape2D" parent="LightDetector"]
 shape = SubResource("2")
 position = Vector2(0, 0)
+
+# NEW: Kill zone that detects the Player (layer 2)
+[node name="KillZone" type="Area2D" parent="."]
+monitoring = true
+monitorable = true
+collision_layer = 0
+collision_mask = 2     # layer 2 (Player)
+
+[node name="KillZoneShape" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("3")
+position = Vector2(0, 0)
+
