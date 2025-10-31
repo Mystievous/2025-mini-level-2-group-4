@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://dgempj372bnt0"]
+
+[ext_resource type="Script" uid="uid://dg3rxa8wo5cre" path="res://props/terrarium/terrarium.gd" id="1_h8x1g"]
+[ext_resource type="Texture2D" uid="uid://bddfxjnr2jvlq" path="res://props/terrarium/assets/Aligned/Terrarium.Front.png" id="1_ks07l"]
+[ext_resource type="Texture2D" uid="uid://dolwhoy5invlm" path="res://props/terrarium/assets/Aligned/Terrarium.Back.png" id="2_0kor7"]
+[ext_resource type="Texture2D" uid="uid://bos47oppvk1ln" path="res://props/terrarium/assets/Aligned/Terrarium.HamsterWheel_Aligned.png" id="3_0chwi"]
+[ext_resource type="Texture2D" uid="uid://diyb5b3vrirvt" path="res://props/terrarium/assets/Aligned/Terrarium.Blank_Aligned.png" id="3_g1oce"]
+[ext_resource type="Texture2D" uid="uid://kjqmhe71j0v5" path="res://props/terrarium/assets/Aligned/Terrarium.Middle_Grass.png" id="4_i0qra"]
+[ext_resource type="Texture2D" uid="uid://c3upaqgkxj6k0" path="res://props/terrarium/assets/Aligned/Terrarium.BottleCap_Aligned.png" id="4_ipgmf"]
+[ext_resource type="Texture2D" uid="uid://c264xukhxo7rr" path="res://props/terrarium/assets/Aligned/Terrarium.Leaves_Aligned.png" id="5_0chwi"]
+[ext_resource type="Texture2D" uid="uid://jh1rib1cukfh" path="res://props/terrarium/assets/Aligned/Terrarium.Doll_Aligned.png" id="5_h8x1g"]
+[ext_resource type="Texture2D" uid="uid://c7yenidcyuvpw" path="res://props/terrarium/assets/Aligned/Terrarium.Skull_Aligned.png" id="7_l4i8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8x1g"]
+size = Vector2(284, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4i8h"]
+size = Vector2(158, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44q3f"]
+size = Vector2(20, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1asxs"]
+size = Vector2(20, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dd2wk"]
+size = Vector2(532, 20)
+
+[node name="Terrarium" type="Node2D"]
+script = ExtResource("1_h8x1g")
+
+[node name="Terrarium_back" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -176)
+texture = ExtResource("2_0kor7")
+
+[node name="Terrarium_blankAligned" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -176)
+texture = ExtResource("3_g1oce")
+
+[node name="Items" type="Node2D" parent="."]
+position = Vector2(0, -176)
+
+[node name="Leaves" type="Sprite2D" parent="Items"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_0chwi")
+
+[node name="BottleCap" type="Sprite2D" parent="Items"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("4_ipgmf")
+
+[node name="Doll" type="Sprite2D" parent="Items"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_h8x1g")
+
+[node name="HamsterWheel" type="Sprite2D" parent="Items"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("3_0chwi")
+
+[node name="Skull" type="Sprite2D" parent="Items"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("7_l4i8h")
+
+[node name="Terrarium_middleGrass" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -176)
+texture = ExtResource("4_i0qra")
+
+[node name="Terrarium_front" type="Sprite2D" parent="."]
+position = Vector2(0, -176)
+texture = ExtResource("1_ks07l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(95, -6)
+shape = SubResource("RectangleShape2D_h8x1g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-216, -6)
+shape = SubResource("RectangleShape2D_l4i8h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(227, -101.5)
+shape = SubResource("RectangleShape2D_44q3f")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-285, -101.5)
+shape = SubResource("RectangleShape2D_1asxs")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-29, -197)
+shape = SubResource("RectangleShape2D_dd2wk")

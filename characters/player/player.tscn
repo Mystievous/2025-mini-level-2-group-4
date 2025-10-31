@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c81mp0frljdd8"]
+[gd_scene load_steps=9 format=3 uid="uid://c81mp0frljdd8"]
 
 [ext_resource type="Script" uid="uid://cyw3mg3cao4ew" path="res://characters/player/player.gd" id="1_xxgcw"]
 [ext_resource type="SpriteFrames" uid="uid://cohboywqe0kij" path="res://characters/player/assets/empty.tres" id="2_exd8k"]
@@ -6,9 +6,11 @@
 [ext_resource type="Script" uid="uid://pdt7u37mqoke" path="res://characters/player/flashlight.gd" id="4_5dc8e"]
 [ext_resource type="SpriteFrames" uid="uid://4qfopepcm0f4" path="res://characters/player/assets/full.tres" id="4_c6leb"]
 [ext_resource type="Script" uid="uid://uwteuojttma7" path="res://characters/player/animation_handler.gd" id="5_ixbpm"]
+[ext_resource type="Texture2D" uid="uid://bbkqv3nh3qagm" path="res://assets/FlashlightAssets/radial_light.png" id="7_dirf7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_508ok"]
-size = Vector2(48, 60)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dirf7"]
+radius = 14.0
+height = 42.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -16,19 +18,23 @@ script = ExtResource("1_xxgcw")
 base_speed = 350.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
 sprite_frames = ExtResource("2_exd8k")
 animation = &"down-right"
 
 [node name="AnimationHandler" type="Node2D" parent="." node_paths=PackedStringArray("animated_sprite")]
+position = Vector2(0, -22)
 script = ExtResource("5_ixbpm")
 animated_sprite = NodePath("../AnimatedSprite2D")
 empty_frames = ExtResource("2_exd8k")
 full_frames = ExtResource("4_c6leb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_508ok")
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_dirf7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -22)
 zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -38,6 +44,7 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
 [node name="FlashlightCollider" type="Area2D" parent="."]
+position = Vector2(0, -22)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("4_5dc8e")
@@ -49,3 +56,10 @@ texture = ExtResource("3_exd8k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlashlightCollider"]
 polygon = PackedVector2Array(0, 0, 200, -200, 200, 200)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -22)
+color = Color(1, 0.91764706, 0.17254902, 1)
+energy = 0.18
+texture = ExtResource("7_dirf7")
+texture_scale = 0.63

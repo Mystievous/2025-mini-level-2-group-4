@@ -78,6 +78,14 @@ func _check_animation() -> void:
 	var closest_animation := _get_closest_animation(move_angle)
 			
 	if target_animation != closest_animation:
+		const down_animations = ["down-left", "down-right"]
+		const up_animations = ["up-left", "up-right"]
+		if (
+			(target_animation in down_animations and closest_animation in down_animations) or # Still going down, just switching directions
+			(target_animation in up_animations and closest_animation in up_animations) # Still going up, just switching directions
+		):
+			if absf(parent.velocity.x) <= 10: # Deadzone for switching directions
+				return
 		target_animation = closest_animation
 		debounce_timer.start()
 		

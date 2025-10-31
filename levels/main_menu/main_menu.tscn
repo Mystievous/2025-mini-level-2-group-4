@@ -1136,8 +1136,9 @@ texture_pressed = SubResource("AtlasTexture_h370v")
 texture_hover = SubResource("AtlasTexture_qhxwq")
 stretch_mode = 0
 
-[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ii3ol")
+volume_db = 9.941
 autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="start_game"]

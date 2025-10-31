@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm3b0hh4cg3rp"]
+[gd_scene load_steps=9 format=3 uid="uid://bm3b0hh4cg3rp"]
 
 [ext_resource type="Texture2D" uid="uid://bbccsmrgt1kbn" path="res://assets/environment/campfire-Sheet-export.png" id="1_psjnv"]
 [ext_resource type="Texture2D" uid="uid://bbkqv3nh3qagm" path="res://assets/FlashlightAssets/radial_light.png" id="2_ia5es"]
@@ -39,13 +39,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Campfire" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_oxnxd")
-autoplay = "default"
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxpym"]
+radius = 18.0
+height = 64.0
+
+[node name="Campfire" type="StaticBody2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.040008545, -0.95999146)
 color = Color(1, 0.49803922, 0.11372549, 1)
 energy = 0.53
 shadow_enabled = true
 texture = ExtResource("2_ia5es")
 texture_scale = 1.84
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.040008545, -9.959991)
+sprite_frames = SubResource("SpriteFrames_oxnxd")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oxpym")
