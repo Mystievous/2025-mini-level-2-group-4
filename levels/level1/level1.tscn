@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=13 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
 [ext_resource type="TileSet" uid="uid://yd3vypr6e2qp" path="res://assets/environment/props.tres" id="2_3jy00"]
 [ext_resource type="PackedScene" uid="uid://bm3b0hh4cg3rp" path="res://props/environment/campfire.tscn" id="3_8yb7b"]
 [ext_resource type="PackedScene" uid="uid://dgempj372bnt0" path="res://props/terrarium/terrarium.tscn" id="3_tysf0"]
+[ext_resource type="PackedScene" uid="uid://lcod0re2n87" path="res://dev_workspaces/ko/items/item_Cap.tscn" id="4_ddtso"]
 [ext_resource type="PackedScene" uid="uid://cqt8v4vgksjok" path="res://props/environment/lamp.tscn" id="4_gw1fo"]
+[ext_resource type="PackedScene" uid="uid://cynlb3bf00ydn" path="res://dev_workspaces/ko/items/item_Doll.tscn" id="5_f7y8c"]
+[ext_resource type="PackedScene" uid="uid://xegupd3u4su0" path="res://dev_workspaces/ko/items/item_Hamster_Wheel.tscn" id="6_xc23s"]
+[ext_resource type="PackedScene" uid="uid://bme6vbedusuud" path="res://dev_workspaces/ko/items/item_Leaves.tscn" id="7_n5g8f"]
+[ext_resource type="PackedScene" uid="uid://cdsqb881f2yj1" path="res://dev_workspaces/ko/items/item_Skull.tscn" id="8_qugyr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
 
@@ -32,6 +37,21 @@ tile_set = ExtResource("2_3jy00")
 
 [node name="Terrarium" parent="." instance=ExtResource("3_tysf0")]
 position = Vector2(24, -1072)
+
+[node name="Cap" parent="." instance=ExtResource("4_ddtso")]
+position = Vector2(1406, 560)
+
+[node name="Doll" parent="." instance=ExtResource("5_f7y8c")]
+position = Vector2(-2014, 772)
+
+[node name="HamsterWheel" parent="." instance=ExtResource("6_xc23s")]
+position = Vector2(-1301, -487)
+
+[node name="Leaves" parent="." instance=ExtResource("7_n5g8f")]
+position = Vector2(-40, 753)
+
+[node name="Skull" parent="." instance=ExtResource("8_qugyr")]
+position = Vector2(-942, 230)
 
 [node name="Campfire" parent="." instance=ExtResource("3_8yb7b")]
 
@@ -67,4 +87,3 @@ scale = Vector2(1, -0.862)
 
 [node name="Player" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(105, -18)
-slowed = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://xegupd3u4su0"]
+
+[ext_resource type="Script" uid="uid://crgigpvmf7frn" path="res://dev_workspaces/ko/scripts/item_wheel_script.gd" id="1_gb2ay"]
+[ext_resource type="Texture2D" uid="uid://dpvpv8r02nher" path="res://props/terrarium/assets/Solo.Items/Hamster Wheel.png" id="2_gb2ay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euj6m"]
+size = Vector2(144, 128)
+
+[node name="HamsterWheel" type="Area2D" groups=["item_drop"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_gb2ay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_euj6m")
+debug_color = Color(1, 0.47554117, 0.88928217, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gb2ay")

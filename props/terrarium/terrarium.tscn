@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgempj372bnt0"]
+[gd_scene load_steps=19 format=3 uid="uid://dgempj372bnt0"]
 
-[ext_resource type="Script" uid="uid://dg3rxa8wo5cre" path="res://props/terrarium/terrarium.gd" id="1_h8x1g"]
+[ext_resource type="Script" uid="uid://6juwn73phkll" path="res://dev_workspaces/ko/terrarium.gd" id="1_h8x1g"]
 [ext_resource type="Texture2D" uid="uid://bddfxjnr2jvlq" path="res://props/terrarium/assets/Aligned/Terrarium.Front.png" id="1_ks07l"]
 [ext_resource type="Texture2D" uid="uid://dolwhoy5invlm" path="res://props/terrarium/assets/Aligned/Terrarium.Back.png" id="2_0kor7"]
+[ext_resource type="PackedScene" uid="uid://qcaqk6njeuva" path="res://levels/Win/win_screen.tscn" id="2_l4i8h"]
 [ext_resource type="Texture2D" uid="uid://bos47oppvk1ln" path="res://props/terrarium/assets/Aligned/Terrarium.HamsterWheel_Aligned.png" id="3_0chwi"]
 [ext_resource type="Texture2D" uid="uid://diyb5b3vrirvt" path="res://props/terrarium/assets/Aligned/Terrarium.Blank_Aligned.png" id="3_g1oce"]
 [ext_resource type="Texture2D" uid="uid://kjqmhe71j0v5" path="res://props/terrarium/assets/Aligned/Terrarium.Middle_Grass.png" id="4_i0qra"]
@@ -29,8 +30,12 @@ size = Vector2(532, 20)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h8x1g"]
 polygon = PackedVector2Array(237, -207, 237, 4, -47, 4, -47, -16, 217, -16, 217, -187, -275, -187, -275, -16, -137, -16, -137, 4, -295, 4, -295, -207)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtohe"]
+size = Vector2(576, 320)
+
 [node name="Terrarium" type="Node2D"]
 script = ExtResource("1_h8x1g")
+win_scene = ExtResource("2_l4i8h")
 
 [node name="Terrarium_back" type="Sprite2D" parent="."]
 z_index = -1
@@ -42,31 +47,26 @@ z_index = -1
 position = Vector2(0, -176)
 texture = ExtResource("3_g1oce")
 
-[node name="Items" type="Node2D" parent="."]
+[node name="items" type="Node2D" parent="."]
 position = Vector2(0, -176)
 
-[node name="Leaves" type="Sprite2D" parent="Items"]
-unique_name_in_owner = true
-visible = false
-texture = ExtResource("5_0chwi")
-
-[node name="BottleCap" type="Sprite2D" parent="Items"]
-unique_name_in_owner = true
+[node name="cap" type="Sprite2D" parent="items"]
 visible = false
 texture = ExtResource("4_ipgmf")
 
-[node name="Doll" type="Sprite2D" parent="Items"]
-unique_name_in_owner = true
+[node name="leaf" type="Sprite2D" parent="items"]
+visible = false
+texture = ExtResource("5_0chwi")
+
+[node name="doll" type="Sprite2D" parent="items"]
 visible = false
 texture = ExtResource("5_h8x1g")
 
-[node name="HamsterWheel" type="Sprite2D" parent="Items"]
-unique_name_in_owner = true
+[node name="wheel" type="Sprite2D" parent="items"]
 visible = false
 texture = ExtResource("3_0chwi")
 
-[node name="Skull" type="Sprite2D" parent="Items"]
-unique_name_in_owner = true
+[node name="skull" type="Sprite2D" parent="items"]
 visible = false
 texture = ExtResource("7_l4i8h")
 
@@ -104,3 +104,13 @@ shape = SubResource("RectangleShape2D_dd2wk")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 visible = false
 occluder = SubResource("OccluderPolygon2D_h8x1g")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-32, 32)
+shape = SubResource("RectangleShape2D_mtohe")
+debug_color = Color(0.50881004, 0.42451367, 1, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
