@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bbkqv3nh3qagm" path="res://assets/FlashlightAssets/radial_light.png" id="7_dirf7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dirf7"]
-radius = 14.0
+radius = 21.0
 height = 42.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -30,6 +30,7 @@ empty_frames = ExtResource("2_exd8k")
 full_frames = ExtResource("4_c6leb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_dirf7")
 
@@ -61,5 +62,6 @@ polygon = PackedVector2Array(0, 0, 200, -200, 200, 200)
 position = Vector2(0, -22)
 color = Color(1, 0.91764706, 0.17254902, 1)
 energy = 0.18
+shadow_enabled = true
 texture = ExtResource("7_dirf7")
 texture_scale = 0.63

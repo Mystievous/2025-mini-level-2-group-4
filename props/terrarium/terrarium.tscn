@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgempj372bnt0"]
+[gd_scene load_steps=17 format=3 uid="uid://dgempj372bnt0"]
 
 [ext_resource type="Script" uid="uid://dg3rxa8wo5cre" path="res://props/terrarium/terrarium.gd" id="1_h8x1g"]
 [ext_resource type="Texture2D" uid="uid://bddfxjnr2jvlq" path="res://props/terrarium/assets/Aligned/Terrarium.Front.png" id="1_ks07l"]
@@ -25,6 +25,9 @@ size = Vector2(20, 171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd2wk"]
 size = Vector2(532, 20)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h8x1g"]
+polygon = PackedVector2Array(237, -207, 237, 4, -47, 4, -47, -16, 217, -16, 217, -187, -275, -187, -275, -16, -137, -16, -137, 4, -295, 4, -295, -207)
 
 [node name="Terrarium" type="Node2D"]
 script = ExtResource("1_h8x1g")
@@ -97,3 +100,7 @@ shape = SubResource("RectangleShape2D_1asxs")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-29, -197)
 shape = SubResource("RectangleShape2D_dd2wk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_h8x1g")
