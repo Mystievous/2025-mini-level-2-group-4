@@ -12,6 +12,9 @@
 radius = 21.0
 height = 42.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6leb"]
+size = Vector2(82, 98)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_xxgcw")
@@ -65,3 +68,12 @@ energy = 0.18
 shadow_enabled = true
 texture = ExtResource("7_dirf7")
 texture_scale = 0.63
+[node name="PickupRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRange"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_c6leb")
+debug_color = Color(0.5580915, 0.5598729, 0.09683258, 0.41960785)
+
+[connection signal="area_entered" from="PickupRange" to="." method="_on_pickup_range_area_entered"]
+[connection signal="area_exited" from="PickupRange" to="." method="_on_pickup_range_area_exited"]

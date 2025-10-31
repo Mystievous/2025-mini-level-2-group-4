@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpwda60gyvhfq"]
+
+[ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_khgje"]
+[ext_resource type="PackedScene" uid="uid://cynlb3bf00ydn" path="res://dev_workspaces/ko/items/item_Doll.tscn" id="2_e0mh0"]
+[ext_resource type="PackedScene" uid="uid://cdsqb881f2yj1" path="res://dev_workspaces/ko/items/item_Skull.tscn" id="3_3n115"]
+[ext_resource type="PackedScene" uid="uid://xegupd3u4su0" path="res://dev_workspaces/ko/items/item_Hamster_Wheel.tscn" id="4_d3cve"]
+[ext_resource type="PackedScene" uid="uid://bme6vbedusuud" path="res://dev_workspaces/ko/items/item_Leaves.tscn" id="5_yw5s8"]
+[ext_resource type="PackedScene" uid="uid://lcod0re2n87" path="res://dev_workspaces/ko/items/item_Cap.tscn" id="6_ak3d3"]
+[ext_resource type="PackedScene" uid="uid://cdfhccsnndw3n" path="res://dev_workspaces/ko/terrarium.tscn" id="7_ak3d3"]
+
+[node name="Testscene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_khgje")]
+position = Vector2(99, 124)
+
+[node name="Doll" parent="." instance=ExtResource("2_e0mh0")]
+position = Vector2(-59, 21)
+
+[node name="Skull" parent="." instance=ExtResource("3_3n115")]
+position = Vector2(-155, 84)
+
+[node name="HamsterWheel" parent="." instance=ExtResource("4_d3cve")]
+position = Vector2(-114, 286)
+
+[node name="Leaves" parent="." instance=ExtResource("5_yw5s8")]
+position = Vector2(-20, 167)
+
+[node name="Cap" parent="." instance=ExtResource("6_ak3d3")]
+position = Vector2(123, 292)
+
+[node name="Terrarium" parent="." instance=ExtResource("7_ak3d3")]
+position = Vector2(401, -138)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bme6vbedusuud"]
+
+[ext_resource type="Script" uid="uid://cfvdwsjld3gpg" path="res://dev_workspaces/ko/scripts/item_leaves_script.gd" id="1_foqdh"]
+[ext_resource type="Texture2D" uid="uid://qsds2a4tp688" path="res://props/terrarium/Solo.Items/Leaves.png" id="2_foqdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euj6m"]
+size = Vector2(112, 64)
+
+[node name="Leaves" type="Area2D" groups=["item_drop"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_foqdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_euj6m")
+debug_color = Color(1, 0.47554117, 0.88928217, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_foqdh")
