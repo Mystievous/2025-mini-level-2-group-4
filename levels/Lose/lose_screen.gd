@@ -66,7 +66,7 @@ func jumpscare():
 	glow1.visible = true
 	glow2.visible = true
 	JScare.play("jumpscare")
-	play_jumpscare_sound(5.0, 2.4)
+	play_jumpscare_sound(5.4, 2.4)
 	
 	await JScare.animation_finished
 

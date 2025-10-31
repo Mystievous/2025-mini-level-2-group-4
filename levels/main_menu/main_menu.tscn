@@ -1086,7 +1086,7 @@ position = Vector2(1265, 768)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_07nfu")
 autoplay = "default"
-frame_progress = 0.72800404
+frame_progress = 0.39491215
 
 [node name="tallGrassTilemapFG2" type="TileMapLayer" parent="."]
 modulate = Color(0.62908286, 0.62908286, 0.62908286, 1)
@@ -1138,6 +1138,7 @@ stretch_mode = 0
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ii3ol")
+volume_db = 5.0
 autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="start_game"]

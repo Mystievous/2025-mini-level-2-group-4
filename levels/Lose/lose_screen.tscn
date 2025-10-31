@@ -853,9 +853,11 @@ stretch_mode = 0
 
 [node name="JumpscareSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_3udv6")
+volume_db = -5.0
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_nyho7")
+volume_db = 5.0
 
 [connection signal="pressed" from="QuitButton" to="." method="end_game"]
 [connection signal="pressed" from="ReplayButton" to="." method="restart_game"]

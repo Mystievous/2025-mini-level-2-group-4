@@ -592,17 +592,18 @@ position = Vector2(1128, 1912)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ykp15")
 autoplay = "default"
-frame_progress = 0.438541
+frame_progress = 0.6686186
 
 [node name="playerDancing" type="AnimatedSprite2D" parent="."]
 position = Vector2(512, 1944)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ir1qc")
 autoplay = "default"
-frame_progress = 0.34392494
+frame_progress = 0.066029884
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_l2aa0")
+volume_db = 5.0
 autoplay = true
 
 [connection signal="pressed" from="Replay" to="." method="restart_game"]
