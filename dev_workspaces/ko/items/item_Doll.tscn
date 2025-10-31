@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cynlb3bf00ydn"]
+
+[ext_resource type="Script" uid="uid://co5w5jpbeu315" path="res://dev_workspaces/ko/scripts/item.gd" id="1_wv7qb"]
+[ext_resource type="Texture2D" uid="uid://bc206mqakre0" path="res://props/terrarium/Solo.Items/Doll.png" id="2_o6pnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euj6m"]
+size = Vector2(64, 64)
+
+[node name="Doll" type="Area2D" groups=["item_drop"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_wv7qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_euj6m")
+debug_color = Color(1, 0.47554117, 0.88928217, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o6pnb")

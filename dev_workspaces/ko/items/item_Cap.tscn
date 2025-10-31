@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://lcod0re2n87"]
+
+[ext_resource type="Script" uid="uid://dtyqmdwk5phwq" path="res://dev_workspaces/ko/scripts/item_cap_script.gd" id="1_d0onq"]
+[ext_resource type="Texture2D" uid="uid://bc206mqakre0" path="res://props/terrarium/Solo.Items/Doll.png" id="2_qwhqu"]
+[ext_resource type="Texture2D" uid="uid://h0jrcl0bdp3p" path="res://props/terrarium/Solo.Items/BottleCap_Water.png" id="3_qwhqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euj6m"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28d4j"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkhmh"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aavqt"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yucna"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7doyi"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sigs4"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17lkh"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h401u"]
+atlas = ExtResource("3_qwhqu")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wlk2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28d4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkhmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aavqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yucna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7doyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sigs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17lkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h401u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cap" type="Area2D" groups=["item_drop"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_d0onq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_euj6m")
+debug_color = Color(1, 0.47554117, 0.88928217, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_qwhqu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wlk2a")
+autoplay = "default"
+frame_progress = 0.8631222
