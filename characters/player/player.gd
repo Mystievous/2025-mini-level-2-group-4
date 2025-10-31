@@ -17,6 +17,7 @@ signal slow_changed(new_val: bool)
 		slow_changed.emit(new_val)
 		
 func _ready():
+	
 	Statics.player = self
 
 

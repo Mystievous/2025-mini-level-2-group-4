@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=12 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dm2ftuqouu3yq" path="res://UI/UI.tscn" id="3_tysf0"]
 [ext_resource type="PackedScene" uid="uid://cqt8v4vgksjok" path="res://props/environment/lamp.tscn" id="4_gw1fo"]
 [ext_resource type="Texture2D" uid="uid://bu5smd8cc4uyl" path="res://characters/snail/assets/Snail_Normal.png" id="7_3jy00"]
+[ext_resource type="Script" uid="uid://d4nm2ns0qwfj3" path="res://characters/snail/snail.gd" id="8_8yb7b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
 
@@ -50,8 +51,10 @@ position = Vector2(829, 405)
 
 [node name="Player" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(960, 540)
+carry_move_percentage = 0.75
 slowed = true
 
 [node name="Snail" type="Sprite2D" parent="."]
 position = Vector2(700, 559)
 texture = SubResource("AtlasTexture_8yb7b")
+script = ExtResource("8_8yb7b")

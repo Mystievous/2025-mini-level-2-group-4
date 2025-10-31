@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dm2ftuqouu3yq"]
+[gd_scene load_steps=18 format=3 uid="uid://dm2ftuqouu3yq"]
 
 [ext_resource type="Script" uid="uid://d60el47c7rkw" path="res://UI/ItemTracking.gd" id="1_6dd3c"]
 [ext_resource type="Texture2D" uid="uid://dmao57dmo1x3h" path="res://UI/UIButton/pixil-frame-0 (3).png" id="2_q0uhn"]
@@ -43,6 +43,11 @@ corner_radius_bottom_left = 10
 [sub_resource type="AtlasTexture" id="AtlasTexture_d050y"]
 atlas = ExtResource("4_e707p")
 region = Rect2(1.1222534, 77.12918, 62.960106, 45.963272)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqf55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqf55"]
+bg_color = Color(0.7818665, 0.5502997, 0.12896562, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgmx8"]
 atlas = ExtResource("5_f1fl4")
@@ -165,9 +170,11 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_d050y")
 expand_mode = 2
 
-[node name="Distance Bar" type="ProgressBar" parent="HBoxContainer"]
+[node name="DistanceBar" type="ProgressBar" parent="HBoxContainer"]
 custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_jqf55")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jqf55")
 script = ExtResource("5_jqf55")
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
