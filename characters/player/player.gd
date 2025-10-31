@@ -15,6 +15,10 @@ signal slow_changed(new_val: bool)
 	set(new_val):
 		slowed = new_val
 		slow_changed.emit(new_val)
+		
+func _ready():
+	Statics.player = self
+
 
 func _physics_process(_delta: float) -> void:
 	var move_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")

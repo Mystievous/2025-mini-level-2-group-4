@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm2ftuqouu3yq"]
+[gd_scene load_steps=16 format=3 uid="uid://dm2ftuqouu3yq"]
 
 [ext_resource type="Script" uid="uid://d60el47c7rkw" path="res://UI/ItemTracking.gd" id="1_6dd3c"]
 [ext_resource type="Texture2D" uid="uid://dmao57dmo1x3h" path="res://UI/UIButton/pixil-frame-0 (3).png" id="2_q0uhn"]
 [ext_resource type="Script" uid="uid://uh3vmeudw6xj" path="res://UI/QuestionButton.gd" id="3_q0uhn"]
+[ext_resource type="Texture2D" uid="uid://bu5smd8cc4uyl" path="res://characters/snail/assets/Snail_Normal.png" id="4_e707p"]
+[ext_resource type="Texture2D" uid="uid://e84vgfiasgd" path="res://characters/player/assets/Ant-Walk-Full-Sheet.png" id="5_f1fl4"]
+[ext_resource type="Script" uid="uid://cyv07cwmerwbp" path="res://UI/DistanceBar.gd" id="5_jqf55"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg4cr"]
 bg_color = Color(0.13636124, 0.13802296, 0.16581333, 1)
@@ -36,6 +39,14 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d050y"]
+atlas = ExtResource("4_e707p")
+region = Rect2(1.1222534, 77.12918, 62.960106, 45.963272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgmx8"]
+atlas = ExtResource("5_f1fl4")
+region = Rect2(7.3388214, 0, 50.27233, 63.304157)
 
 [node name="UI" type="CanvasLayer"]
 
@@ -72,7 +83,7 @@ vertical_alignment = 1
 [node name="CountLabel" type="Label" parent="TaskReminderUI/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "0 / 7"
+text = "0 / 5"
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="TaskReminderUI/PanelContainer/VBoxContainer"]
@@ -90,10 +101,10 @@ offset_bottom = 40.0
 
 [node name="TextureButton" type="TextureButton" parent="Instructions UI"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = -112.0
-offset_right = 77.333374
-offset_bottom = -79.67272
+offset_left = 48.0
+offset_top = -128.0
+offset_right = 85.333374
+offset_bottom = -95.67272
 scale = Vector2(3, 3.12)
 pivot_offset = Vector2(8, -61.857975)
 texture_normal = SubResource("AtlasTexture_f1fl4")
@@ -137,3 +148,29 @@ text = "1. Collect Items
 3. DO NOT GET CAUGHT BY SNAIL"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.30800003
+anchor_top = 0.037
+anchor_right = 0.30800003
+anchor_bottom = 0.037
+offset_left = 16.639954
+offset_top = -39.96
+offset_right = 652.63995
+offset_bottom = 24.04
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_d050y")
+expand_mode = 2
+
+[node name="Distance Bar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+script = ExtResource("5_jqf55")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qgmx8")
+expand_mode = 2

@@ -2,7 +2,7 @@ extends Node
 signal all_items_collected
 
 @export var label_path: NodePath = ^"Label"  
-@export var total_items: int = 0
+@export var total_items: int = 5
 var items_collected: int = 0
 
 func _ready():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=11 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bm3b0hh4cg3rp" path="res://props/environment/campfire.tscn" id="3_8yb7b"]
 [ext_resource type="PackedScene" uid="uid://dm2ftuqouu3yq" path="res://UI/UI.tscn" id="3_tysf0"]
 [ext_resource type="PackedScene" uid="uid://cqt8v4vgksjok" path="res://props/environment/lamp.tscn" id="4_gw1fo"]
+[ext_resource type="Texture2D" uid="uid://bu5smd8cc4uyl" path="res://characters/snail/assets/Snail_Normal.png" id="7_3jy00"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
 
@@ -13,7 +14,13 @@
 cull_mode = 2
 polygon = PackedVector2Array(1218, 576, 1277, 579, 1277, 515, 1722, 516, 1724, 576, 1784, 575, 1789, 634, 1847, 640, 1853, 703, 1918, 707, 1918, 829, 1854, 826, 1853, 885, 1792, 887, 1786, 952, 1281, 956, 1285, 894, 1219, 893)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yb7b"]
+atlas = ExtResource("7_3jy00")
+region = Rect2(-1.5110588, 76.411, 65.83281, 47.39962)
+
 [node name="Level1" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource("3_tysf0")]
 
 [node name="NightStuff" type="CanvasModulate" parent="."]
 color = Color(0.22821292, 0.23849475, 0.4792021, 1)
@@ -35,8 +42,6 @@ tile_set = ExtResource("2_3jy00")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="NavigationRegion2D/Props"]
 occluder = SubResource("OccluderPolygon2D_sfwlx")
 
-[node name="UI" parent="NavigationRegion2D" instance=ExtResource("3_tysf0")]
-
 [node name="Campfire" parent="." instance=ExtResource("3_8yb7b")]
 position = Vector2(325, 569)
 
@@ -46,3 +51,7 @@ position = Vector2(829, 405)
 [node name="Player" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(960, 540)
 slowed = true
+
+[node name="Snail" type="Sprite2D" parent="."]
+position = Vector2(700, 559)
+texture = SubResource("AtlasTexture_8yb7b")
