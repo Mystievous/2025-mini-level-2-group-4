@@ -9,7 +9,6 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="2"]
 radius = 14.0
 
-# NEW: slightly larger circle for the kill zone (feel free to tweak)
 [sub_resource type="CircleShape2D" id="3"]
 radius = 12.0
 
@@ -19,8 +18,10 @@ collision_mask = 3
 script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1")
+texture = ExtResource("1")            # normal sheet by default
 centered = true
+hframes = 4                            # 4x4 sheet: rows = directions, cols = frames
+vframes = 4
 offset = Vector2(0, 0)
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
@@ -31,20 +32,18 @@ position = Vector2(0, 0)
 monitoring = true
 monitorable = true
 collision_layer = 0
-collision_mask = 128   # layer 8 (flashlight)
+collision_mask = 128                   # layer 8 (flashlight cone)
 
 [node name="LightDetectorShape" type="CollisionShape2D" parent="LightDetector"]
 shape = SubResource("2")
 position = Vector2(0, 0)
 
-# NEW: Kill zone that detects the Player (layer 2)
 [node name="KillZone" type="Area2D" parent="."]
 monitoring = true
 monitorable = true
 collision_layer = 0
-collision_mask = 2     # layer 2 (Player)
+collision_mask = 2                     # layer 2 (Player)
 
 [node name="KillZoneShape" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("3")
 position = Vector2(0, 0)
-
