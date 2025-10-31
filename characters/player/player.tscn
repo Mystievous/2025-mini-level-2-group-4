@@ -44,6 +44,7 @@ script = ExtResource("4_5dc8e")
 
 [node name="Flashlight" type="PointLight2D" parent="FlashlightCollider"]
 position = Vector2(-3, 6)
+shadow_enabled = true
 texture = ExtResource("3_exd8k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlashlightCollider"]

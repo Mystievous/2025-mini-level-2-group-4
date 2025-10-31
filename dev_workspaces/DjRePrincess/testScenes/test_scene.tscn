@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cubu5haehxfpf"]
+[gd_scene load_steps=4 format=3 uid="uid://cubu5haehxfpf"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_0td7y"]
 [ext_resource type="Texture2D" uid="uid://bbkqv3nh3qagm" path="res://assets/FlashlightAssets/radial_light.png" id="2_u6tjl"]
+[ext_resource type="TileSet" uid="uid://yd3vypr6e2qp" path="res://assets/environment/props.tres" id="3_tk41o"]
 
 [node name="testScene" type="Node2D"]
 
@@ -25,3 +26,7 @@ energy = 0.4
 position = Vector2(540, 340)
 color = Color(0.62340254, 0.33986664, 0.01958007, 1)
 texture = ExtResource("2_u6tjl")
+
+[node name="Props" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 8, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("3_tk41o")
