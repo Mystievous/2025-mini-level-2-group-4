@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=13 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
 [ext_resource type="TileSet" uid="uid://yd3vypr6e2qp" path="res://assets/environment/props.tres" id="2_3jy00"]
 [ext_resource type="PackedScene" uid="uid://bm3b0hh4cg3rp" path="res://props/environment/campfire.tscn" id="3_8yb7b"]
 [ext_resource type="PackedScene" uid="uid://cqt8v4vgksjok" path="res://props/environment/lamp.tscn" id="4_gw1fo"]
+[ext_resource type="PackedScene" uid="uid://cynlb3bf00ydn" path="res://dev_workspaces/ko/items/item_Doll.tscn" id="6_tysf0"]
+[ext_resource type="PackedScene" uid="uid://lcod0re2n87" path="res://dev_workspaces/ko/items/item_Cap.tscn" id="7_jhqhn"]
+[ext_resource type="PackedScene" uid="uid://xegupd3u4su0" path="res://dev_workspaces/ko/items/item_Hamster_Wheel.tscn" id="8_ddtso"]
+[ext_resource type="PackedScene" uid="uid://bme6vbedusuud" path="res://dev_workspaces/ko/items/item_Leaves.tscn" id="9_f7y8c"]
+[ext_resource type="PackedScene" uid="uid://cdsqb881f2yj1" path="res://dev_workspaces/ko/items/item_Skull.tscn" id="10_xc23s"]
+[ext_resource type="PackedScene" uid="uid://cdfhccsnndw3n" path="res://dev_workspaces/ko/terrarium.tscn" id="11_ddtso"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
 
@@ -35,4 +41,21 @@ position = Vector2(762, 414)
 
 [node name="Player" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(960, 540)
-slowed = true
+
+[node name="Doll" parent="." instance=ExtResource("6_tysf0")]
+position = Vector2(800, 544)
+
+[node name="Cap" parent="." instance=ExtResource("7_jhqhn")]
+position = Vector2(640, 600)
+
+[node name="HamsterWheel" parent="." instance=ExtResource("8_ddtso")]
+position = Vector2(824, 728)
+
+[node name="Leaves" parent="." instance=ExtResource("9_f7y8c")]
+position = Vector2(984, 368)
+
+[node name="Skull" parent="." instance=ExtResource("10_xc23s")]
+position = Vector2(792, 280)
+
+[node name="Terrarium" parent="." instance=ExtResource("11_ddtso")]
+position = Vector2(384, 272)
