@@ -11,20 +11,20 @@ extends CharacterBody2D
 @export var evil_texture: Texture2D
 
 var _player: Node2D
-var _lit := false
-var _light_timer := 0.0
-var _killing := false
+var _lit: bool = false
+var _light_timer: float = 0.0
+var _killing: bool = false
 
 # Animation state
-var _frame_timer := 0.0
-var _walk_frame := 0
-var _row := 0          # 0=down,1=left,2=up,3=right
-var _last_dir := Vector2.DOWN
+var _frame_timer: float = 0.0
+var _walk_frame: int = 0
+var _row: int = 0          # 0=down,1=left,2=up,3=right
+var _last_dir: Vector2 = Vector2.DOWN
 
-const FLASHLIGHT_LAYER_MASK := 1 << 7   # layer 8
-const PLAYER_LAYER_MASK := 1 << 1       # layer 2
-const FRAMES_PER_ROW := 4
-const ROWS := 4
+const FLASHLIGHT_LAYER_MASK: int = 1 << 7   # layer 8
+const PLAYER_LAYER_MASK: int = 1 << 1       # layer 2
+const FRAMES_PER_ROW: int = 4
+const ROWS: int = 4
 
 @onready var _sprite: Sprite2D = $Sprite2D
 
@@ -38,8 +38,7 @@ func _ready() -> void:
 	if evil_texture == null:
 		evil_texture = load("res://characters/snail/assets/Snail_Evil.png")
 
-	_sprite.texture = is_evil ? evil_texture : normal_texture
-	# ensure sheet layout
+	_sprite.texture = evil_texture if is_evil else normal_texture
 	_sprite.hframes = FRAMES_PER_ROW
 	_sprite.vframes = ROWS
 	_sprite.frame = 0
@@ -83,11 +82,11 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# chase
-	var to_player := _player.global_position - global_position
-	var dist := to_player.length()
+	var to_player: Vector2 = _player.global_position - global_position
+	var dist: float = to_player.length()
 	if dist > min_stop_distance:
-		var dir := to_player / max(dist, 0.0001)
-		velocity = dir * speed
+		var dir_to_player: Vector2 = to_player / max(dist, 0.0001)
+		velocity = dir_to_player * speed
 	else:
 		velocity = Vector2.ZERO
 
@@ -102,7 +101,7 @@ func _on_light_enter(area: Area2D) -> void:
 		_lit = true
 
 func _on_light_exit(_area: Area2D) -> void:
-	var still_lit := false
+	var still_lit: bool = false
 	for a in $LightDetector.get_overlapping_areas():
 		if (a.collision_layer & FLASHLIGHT_LAYER_MASK) != 0:
 			still_lit = true
@@ -112,7 +111,7 @@ func _on_light_exit(_area: Area2D) -> void:
 func _on_killzone_body_entered(body: Node) -> void:
 	if _killing:
 		return
-	var hit_player := body.is_in_group("player")
+	var hit_player: bool = body.is_in_group("player")
 	if not hit_player and body is CollisionObject2D:
 		hit_player = (body.collision_layer & PLAYER_LAYER_MASK) != 0
 	if hit_player:
@@ -127,8 +126,12 @@ func _go_to_lose() -> void:
 # rows: 0=down, 1=left, 2=up, 3=right
 # -----------------------
 func _update_animation(delta: float) -> void:
-	var moving := velocity.length() > 0.01
-	var dir := moving ? velocity.normalized() : _last_dir
+	var moving: bool = velocity.length() > 0.01
+	var dir: Vector2 = Vector2.ZERO
+	if moving:
+		dir = velocity.normalized()
+	else:
+		dir = _last_dir
 
 	_row = _dir_to_row(dir)
 	if moving:
@@ -143,9 +146,13 @@ func _update_animation(delta: float) -> void:
 	_sprite.frame = _row * FRAMES_PER_ROW + _walk_frame
 
 func _dir_to_row(d: Vector2) -> int:
-	# decide primarily by the axis with larger magnitude
 	if abs(d.x) > abs(d.y):
-		return (d.x > 0.0) ? 3 : 1   # right : left
+		if d.x > 0.0:
+			return 3   # right
+		else:
+			return 1   # left
 	else:
-		return (d.y > 0.0) ? 0 : 2   # down : up
-
+		if d.y > 0.0:
+			return 0   # down
+		else:
+			return 2   # up
