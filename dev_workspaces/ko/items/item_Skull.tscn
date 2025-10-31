@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdsqb881f2yj1"]
 
 [ext_resource type="Script" uid="uid://bsi3kuw1hxtbi" path="res://dev_workspaces/ko/scripts/item_skull_script.gd" id="1_h7rcf"]
-[ext_resource type="Texture2D" uid="uid://baltgnncjfq3k" path="res://props/terrarium/Solo.Items/Skull.png" id="2_h7rcf"]
+[ext_resource type="Texture2D" uid="uid://byothfq0g7d4i" path="res://props/terrarium/assets/Solo.Items/Skull.png" id="2_h7rcf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euj6m"]
 size = Vector2(120, 96)

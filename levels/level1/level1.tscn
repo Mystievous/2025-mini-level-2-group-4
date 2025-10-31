@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=14 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
 [ext_resource type="TileSet" uid="uid://yd3vypr6e2qp" path="res://assets/environment/props.tres" id="2_3jy00"]
 [ext_resource type="PackedScene" uid="uid://bm3b0hh4cg3rp" path="res://props/environment/campfire.tscn" id="3_8yb7b"]
 [ext_resource type="PackedScene" uid="uid://dgempj372bnt0" path="res://props/terrarium/terrarium.tscn" id="3_tysf0"]
+[ext_resource type="PackedScene" uid="uid://qcaqk6njeuva" path="res://levels/Win/win_screen.tscn" id="4_f7y8c"]
 [ext_resource type="PackedScene" uid="uid://cqt8v4vgksjok" path="res://props/environment/lamp.tscn" id="4_gw1fo"]
+[ext_resource type="PackedScene" uid="uid://lcod0re2n87" path="res://dev_workspaces/ko/items/item_Cap.tscn" id="6_3jy00"]
+[ext_resource type="PackedScene" uid="uid://bme6vbedusuud" path="res://dev_workspaces/ko/items/item_Leaves.tscn" id="8_ddtso"]
+[ext_resource type="PackedScene" uid="uid://xegupd3u4su0" path="res://dev_workspaces/ko/items/item_Hamster_Wheel.tscn" id="9_f7y8c"]
+[ext_resource type="PackedScene" uid="uid://cynlb3bf00ydn" path="res://dev_workspaces/ko/items/item_Doll.tscn" id="10_xc23s"]
+[ext_resource type="PackedScene" uid="uid://cdsqb881f2yj1" path="res://dev_workspaces/ko/items/item_Skull.tscn" id="11_n5g8f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
 
@@ -32,6 +38,7 @@ tile_set = ExtResource("2_3jy00")
 
 [node name="Terrarium" parent="." instance=ExtResource("3_tysf0")]
 position = Vector2(24, -1072)
+win_scene = ExtResource("4_f7y8c")
 
 [node name="Campfire" parent="." instance=ExtResource("3_8yb7b")]
 
@@ -65,6 +72,21 @@ position = Vector2(-816, 272)
 rotation = 3.1415927
 scale = Vector2(1, -0.862)
 
+[node name="Cap" parent="." instance=ExtResource("6_3jy00")]
+position = Vector2(1416, 528)
+
 [node name="Player" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(105, -18)
-slowed = true
+base_speed = 250.0
+
+[node name="Leaves" parent="." instance=ExtResource("8_ddtso")]
+position = Vector2(-8, 752)
+
+[node name="HamsterWheel" parent="." instance=ExtResource("9_f7y8c")]
+position = Vector2(-1304, -488)
+
+[node name="Doll" parent="." instance=ExtResource("10_xc23s")]
+position = Vector2(-2032, 712)
+
+[node name="Skull" parent="." instance=ExtResource("11_n5g8f")]
+position = Vector2(-1288, 712)

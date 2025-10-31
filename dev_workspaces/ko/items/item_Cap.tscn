@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://lcod0re2n87"]
 
 [ext_resource type="Script" uid="uid://dtyqmdwk5phwq" path="res://dev_workspaces/ko/scripts/item_cap_script.gd" id="1_d0onq"]
-[ext_resource type="Texture2D" uid="uid://bc206mqakre0" path="res://props/terrarium/Solo.Items/Doll.png" id="2_qwhqu"]
-[ext_resource type="Texture2D" uid="uid://h0jrcl0bdp3p" path="res://props/terrarium/Solo.Items/BottleCap_Water.png" id="3_qwhqu"]
+[ext_resource type="Texture2D" uid="uid://dhf20oxnr5xiu" path="res://props/terrarium/assets/Solo.Items/Doll.png" id="2_qwhqu"]
+[ext_resource type="Texture2D" uid="uid://pmlhcxk8gv2e" path="res://props/terrarium/assets/Solo.Items/BottleCap_Water.png" id="3_qwhqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euj6m"]
 size = Vector2(64, 64)
