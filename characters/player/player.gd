@@ -16,6 +16,8 @@ var item_bag : String
 signal killed
 signal slow_changed(new_val: bool)
 
+var bag_inventory : Inventory = Inventory.new()
+
 # This is a "property", which is the same as a normal 
 # variable, but it has `get` and `set` methods
 @export var slowed: bool = false:
@@ -25,7 +27,16 @@ signal slow_changed(new_val: bool)
 		slowed = new_val
 		slow_changed.emit(new_val)
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		bag_inventory.add_item(ItemManager.new(ItemsList.ITEM1))
+		print(bag_inventory)
+
+	if Input.is_action_just_pressed("drop"):
+		drop_item()
+		print(bag_inventory)
+
+func _physics_process(_delta: float) -> void:	
 	var move_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	velocity = move_vector * base_speed

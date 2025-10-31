@@ -39,6 +39,16 @@ project/assembly_name="2025-MiniLevel2-Group4"
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://dev_workspaces/ko/itemInteraction/classes/": "green",
+"res://dev_workspaces/ko/itemInteraction/item_sprite_placeholder/": "gray",
+"res://dev_workspaces/ko/itemInteraction/items/": "orange",
+"res://dev_workspaces/ko/itemInteraction/resources/": "blue",
+"res://dev_workspaces/ko/tests/": "gray"
+}
+
 [global_group]
 
 Player=""

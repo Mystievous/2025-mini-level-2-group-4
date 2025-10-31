@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemProperties" load_steps=3 format=3 uid="uid://cub3vuu7dxpbo"]
+
+[ext_resource type="Script" uid="uid://dkpod6wmm442r" path="res://dev_workspaces/ko/itemInteraction/classes/item_base.gd" id="1_cbkk5"]
+[ext_resource type="Texture2D" uid="uid://cqw1cuhl1itue" path="res://dev_workspaces/ko/itemInteraction/item_sprite_placeholder/object1.png" id="2_wpbbu"]
+
+[resource]
+script = ExtResource("1_cbkk5")
+item_name = "item 1"
+texture = ExtResource("2_wpbbu")
+metadata/_custom_type_script = "uid://dkpod6wmm442r"
