@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://8ij28dxj1u44"]
+[gd_scene load_steps=7 format=4 uid="uid://8ij28dxj1u44"]
 
 [ext_resource type="PackedScene" uid="uid://c81mp0frljdd8" path="res://characters/player/player.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://xhh2ny5cl5yu" path="res://assets/environment/ground.tres" id="1_tysf0"]
@@ -7,10 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cqt8v4vgksjok" path="res://props/environment/lamp.tscn" id="4_gw1fo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jhqhn"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sfwlx"]
-cull_mode = 2
-polygon = PackedVector2Array(1218, 576, 1277, 579, 1277, 515, 1722, 516, 1724, 576, 1784, 575, 1789, 634, 1847, 640, 1853, 703, 1918, 707, 1918, 829, 1854, 826, 1853, 885, 1792, 887, 1786, 952, 1281, 956, 1285, 894, 1219, 893)
 
 [node name="Level1" type="Node2D"]
 
@@ -30,9 +26,6 @@ tile_set = ExtResource("1_tysf0")
 [node name="Props" type="TileMapLayer" parent="NavigationRegion2D"]
 tile_map_data = PackedByteArray("AAAdAAwAAQAAAAAAAAAcAAsAAQAAAAAAAAAbAAsAAQAAAAAAAAAaAAwAAQAAAAAAAAAZAAwAAQAAAAAAAAAYAAwAAQAAAAAAAAAXAAwAAQAAAAAAAAAWAAwAAQAAAAAAAAAVAAwAAQAAAAAAAAAWAA0AAQAAAAAAAAAXAA0AAQAAAAAAAAAYAA0AAQAAAAAAAAAZAA0AAQAAAAAAAAAaAA0AAQAAAAAAAAAbAA0AAQAAAAAAAAAbAAwAAQAAAAAAAAAcAAwAAQAAAAAAAAAcAA0AAQAAAAAAAAAaAAsAAQAAAAAAAAAaAAoAAQAAAAAAAAAZAAoAAQAAAAAAAAAZAAkAAQAAAAAAAAAYAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAVAAkAAQAAAAAAAAAUAAkAAQAAAAAAAAAUAAoAAQAAAAAAAAATAAoAAQAAAAAAAAATAAsAAQAAAAAAAAAUAAsAAQAAAAAAAAAVAAsAAQAAAAAAAAAWAAsAAQAAAAAAAAAXAAsAAQAAAAAAAAAYAAoAAQAAAAAAAAAaAAkAAQAAAAAAAAAXAAoAAQAAAAAAAAAWAAoAAQAAAAAAAAAZAAsAAQAAAAAAAAAUAAwAAQAAAAAAAAATAAwAAQAAAAAAAAATAA0AAQAAAAAAAAAUAA0AAQAAAAAAAAAUAA4AAQAAAAAAAAAVAA4AAQAAAAAAAAAWAA4AAQAAAAAAAAAYAAsAAQAAAAAAAAAVAA0AAQAAAAAAAAAVAAoAAQAAAAAAAAAXAA4AAQAAAAAAAAAYAA4AAQAAAAAAAAAZAA4AAQAAAAAAAAAaAA4AAQAAAAAAAAAbAA4AAQAAAAAAAAAbAAoAAQAAAAAAAAA=")
 tile_set = ExtResource("2_3jy00")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="NavigationRegion2D/Props"]
-occluder = SubResource("OccluderPolygon2D_sfwlx")
 
 [node name="Campfire" parent="." instance=ExtResource("3_8yb7b")]
 position = Vector2(325, 569)
